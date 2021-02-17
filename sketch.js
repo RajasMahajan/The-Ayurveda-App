@@ -15,6 +15,7 @@ var coughteaimage;
 var coughimagesprite;
 var headikeremedy;
 var headikeremedyimage;
+var titleimage;
 var coldHomeRemedy;
 var coldHomeRemedyimage;
 var gameState = 1;
@@ -23,19 +24,22 @@ var SolutionCold = 2;
 var SolutionCough = 3;
 var SolutionHeadike = 4;
 function preload() {
+  titleimage = loadImage("title.png");
   intro1image = loadImage("intro1.png");
   homescreenimage = loadImage("home.png");
   coldimage = loadImage("cold.png");
   coughimage = loadImage("cough.png");
-  headikeremedyimage = loadImage("headikehomeremedy.png");
-  headikeimage = loadImage("headike.png");
+  headikeremedyimage = loadImage("headikeremedy.png");
+  headikeimage = loadImage("hedacherealimage.png");
   coughteaimage = loadImage("honeytea.jpg");
   coughremedyimage = loadImage("coughRemedy.png");
   coldHomeRemedyimage = loadImage("coldhomeremedy.png");
 }
 function setup() {
   createCanvas(500, 600);
-  title = createSprite(203, 20, 250, 30);
+  title = createSprite(250, 30, 250, 30);
+  title.addImage(titleimage);
+  title.scale = 0.16;
   // text image/sprite
   intro1 = createSprite(250, 120, 50, 50);
   intro1.addImage(intro1image);
@@ -69,7 +73,7 @@ function setup() {
   coughButton.scale = 0.36;
   coughButton.visible = false;
   headikeButton.addImage(headikeimage);
-  headikeButton.scale = 0.28;
+  headikeButton.scale = 0.18;
   headikeButton.visible = false;
   title.visible = false;
 }
@@ -94,17 +98,17 @@ function draw() {
     coughButton.visible = true;
     headikeButton.visible = true;
     //
-    if (mousePressedOver(coughButton)) {
+    if (mousePressedOver(coughButton) && gameState === 1) {
       gameState = 3;
     }
   }
-  if (mousePressedOver(coldButton)) {
+  if (mousePressedOver(coldButton) && gameState === 1) {
     gameState = 2;
   }
-  if (mousePressedOver(headikeButton)) {
+  if (mousePressedOver(headikeButton) && gameState === 1) {
     gameState = 4;
   }
-  // gameState 2 (home remedy)
+  // gameState 3 (home remedy)
   if (gameState === 3) {
     headikeremedy.visible = false;
     intro1.visible = false;
@@ -117,6 +121,7 @@ function draw() {
     homescreenButton.visible = true;
     coughimagesprite.visible = true;
   }
+  // gameState 2 (home remedy)
   if (gameState === 2) {
     intro1.visible = false;
     headikeremedy.visible = false;
