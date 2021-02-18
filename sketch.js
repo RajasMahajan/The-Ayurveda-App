@@ -38,8 +38,6 @@ function preload() {
 function setup() {
   createCanvas(500, 600);
   title = createSprite(250, 30, 250, 30);
-  title.addImage(titleimage);
-  title.scale = 0.16;
   // text image/sprite
   intro1 = createSprite(250, 120, 50, 50);
   intro1.addImage(intro1image);
@@ -115,7 +113,7 @@ function draw() {
     coughButton.visible = false;
     coldButton.visible = false;
     headikeButton.visible = false;
-    title.visible = false;
+    //title.visible = false;
     //   coldHomeRemedy.visible = true;
     coughremedy.visible = true;
     homescreenButton.visible = true;
@@ -127,7 +125,7 @@ function draw() {
     headikeremedy.visible = false;
     coughButton.visible = false;
     headikeButton.visible = false;
-    title.visible = false;
+    // title.visible = false;
     coldButton.visible = false;
     homescreenButton.visible = true;
     coldHomeRemedy.visible = true;
@@ -138,7 +136,7 @@ function draw() {
     headikeremedy.visible = false;
     coughButton.visible = false;
     headikeButton.visible = false;
-    title.visible = false;
+    //title.visible = false;
     coldButton.visible = false;
     headikeremedy.visible = true;
     homescreenButton.visible = true;
@@ -147,4 +145,7 @@ function draw() {
     gameState = 1;
   }
   drawSprites();
+  fill("black");
+  textSize(18);
+  text("Home Remedy App", 170, 40);
 }
