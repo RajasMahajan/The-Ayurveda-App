@@ -27,7 +27,7 @@ var SolutionCough = 3;
 var SolutionHeadike = 4;
 function preload() {
   titleimage = loadImage("title.png");
-  intro1image = loadImage("intro1.png");
+  intro1image = loadImage("intro 1.png");
   headacheremedyimageimage = loadImage("headacheremedyimage.jpg");
   homescreenimage = loadImage("home.png");
   coldimage = loadImage("cold.png");
@@ -43,9 +43,9 @@ function setup() {
   createCanvas(500, 600);
   // title = createSprite(250, 30, 250, 30);
   // text image/sprite0
-  intro1 = createSprite(250, 120, 50, 50);
+  intro1 = createSprite(250, 150, 50, 50);
   intro1.addImage(intro1image);
-  intro1.scale = 0.5;
+  intro1.scale = 0.7;
   intro1.visible = false;
   //cough remedy image
   coughRemedyimage = createSprite(250, 480, 50, 50);
@@ -69,9 +69,9 @@ function setup() {
   coughimagesprite.addImage(coughteaimage);
   coughimagesprite.scale = 0.6;
   //sprites
-  coldButton = createSprite(230, 230, 200, 30);
-  coughButton = createSprite(230, 350, 200, 30);
-  headikeButton = createSprite(230, 480, 200, 30);
+  coldButton = createSprite(230, 300, 200, 30);
+  coughButton = createSprite(230, 420, 200, 30);
+  headikeButton = createSprite(230, 530, 200, 30);
   //homescreen button
   homescreenButton = createSprite(20, 20, 30, 30);
   homescreenButton.addImage(homescreenimage);
@@ -90,7 +90,7 @@ function setup() {
 }
 
 function draw() {
-  background(27, 235, 23);
+  background(245, 200, 76);
   // gameState 1 (home screen)
   if (gameState === 1) {
     coldHomeRemedy.visible = false;
