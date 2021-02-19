@@ -18,6 +18,8 @@ var headikeremedyimage;
 var titleimage;
 var coldHomeRemedy;
 var coldHomeRemedyimage;
+var headacheremedyimage, headacheremedyimageimage;
+var coughremedyimage, coughremedyimageimage;
 var gameState = 1;
 var HomeScreen = 1;
 var SolutionCold = 2;
@@ -26,9 +28,11 @@ var SolutionHeadike = 4;
 function preload() {
   titleimage = loadImage("title.png");
   intro1image = loadImage("intro1.png");
+  headacheremedyimageimage = loadImage("headacheremedyimage.jpg");
   homescreenimage = loadImage("home.png");
   coldimage = loadImage("cold.png");
   coughimage = loadImage("cough.png");
+  coughremedyimageimage = loadImage("coughremedyimage.jpg");
   headikeremedyimage = loadImage("headikeremedy.png");
   headikeimage = loadImage("hedacherealimage.png");
   coughteaimage = loadImage("honeytea.jpg");
@@ -37,21 +41,30 @@ function preload() {
 }
 function setup() {
   createCanvas(500, 600);
-  title = createSprite(250, 30, 250, 30);
-  // text image/sprite
+  // title = createSprite(250, 30, 250, 30);
+  // text image/sprite0
   intro1 = createSprite(250, 120, 50, 50);
   intro1.addImage(intro1image);
   intro1.scale = 0.5;
   intro1.visible = false;
-  coldHomeRemedy = createSprite(250, 300, 50, 50);
+  //cough remedy image
+  coughRemedyimage = createSprite(250, 480, 50, 50);
+  coughRemedyimage.addImage(coughremedyimageimage);
+  coughRemedyimage.scale = "0.27";
+  //headacheimage
+  headacheremedyimage = createSprite(250, 470, 50, 50);
+  headacheremedyimage.addImage(headacheremedyimageimage);
+  headacheremedyimage.visible = false;
+  //k
+  coldHomeRemedy = createSprite(250, 210, 50, 50);
   coldHomeRemedy.addImage(coldHomeRemedyimage);
-  coldHomeRemedy.scale = 0.7;
+  coldHomeRemedy.scale = 0.6;
   coughremedy = createSprite(250, 200);
   coughremedy.addImage(coughremedyimage);
   coughremedy.scale = 0.7;
-  headikeremedy = createSprite(250, 310, 10, 10);
+  headikeremedy = createSprite(250, 210, 10, 10);
   headikeremedy.addImage(headikeremedyimage);
-  headikeremedy.scale = 0.8;
+  headikeremedy.scale = 0.7;
   coughimagesprite = createSprite(250, 430);
   coughimagesprite.addImage(coughteaimage);
   coughimagesprite.scale = 0.6;
@@ -71,9 +84,9 @@ function setup() {
   coughButton.scale = 0.36;
   coughButton.visible = false;
   headikeButton.addImage(headikeimage);
-  headikeButton.scale = 0.18;
+  headikeButton.scale = 0.15;
   headikeButton.visible = false;
-  title.visible = false;
+  ///title.visible = false;
 }
 
 function draw() {
@@ -83,15 +96,17 @@ function draw() {
     coldHomeRemedy.visible = false;
     coughremedy.visible = false;
     homescreenButton.visible = false;
+    coughRemedyimage.visible = false;
     headikeremedy.visible = false;
     coughimagesprite.visible = false;
     intro1.visible = true;
+    headacheremedyimage.visible = false;
     fill("black");
-    title.shapeColor = "blue";
+    //title.shapeColor = "blue";
     textSize(18);
     textSize(16);
     //  text("Hey,Are you sick?", 10, 70);
-    title.visible = true;
+    // title.visible = true;
     coldButton.visible = true;
     coughButton.visible = true;
     headikeButton.visible = true;
@@ -127,6 +142,7 @@ function draw() {
     headikeButton.visible = false;
     // title.visible = false;
     coldButton.visible = false;
+    coughRemedyimage.visible = true;
     homescreenButton.visible = true;
     coldHomeRemedy.visible = true;
   }
@@ -134,6 +150,7 @@ function draw() {
   if (gameState === 4) {
     intro1.visible = false;
     headikeremedy.visible = false;
+    headacheremedyimage.visible = true;
     coughButton.visible = false;
     headikeButton.visible = false;
     //title.visible = false;
@@ -146,6 +163,7 @@ function draw() {
   }
   drawSprites();
   fill("black");
-  textSize(18);
-  text("Home Remedy App", 170, 40);
+  textSize(28);
+  //textWeight("bold");
+  text("Home Remedy App", 120, 40);
 }
