@@ -45,7 +45,7 @@ function setup() {
   // text image/sprite0
   intro1 = createSprite(250, 150, 50, 50);
   intro1.addImage(intro1image);
-  intro1.scale = 0.7;
+  intro1.scale = 0.6;
   intro1.visible = false;
   //cough remedy image
   coughRemedyimage = createSprite(250, 480, 50, 50);
@@ -86,12 +86,10 @@ function setup() {
   headikeButton.addImage(headikeimage);
   headikeButton.scale = 0.15;
   headikeButton.visible = false;
-  ///title.visible = false;
 }
 
 function draw() {
-  background(245, 200, 76);
-  // gameState 1 (home screen)
+  background(204, 240, 229);
   if (gameState === 1) {
     coldHomeRemedy.visible = false;
     coughremedy.visible = false;
@@ -105,8 +103,6 @@ function draw() {
     //title.shapeColor = "blue";
     textSize(18);
     textSize(16);
-    //  text("Hey,Are you sick?", 10, 70);
-    // title.visible = true;
     coldButton.visible = true;
     coughButton.visible = true;
     headikeButton.visible = true;
@@ -165,5 +161,5 @@ function draw() {
   fill("black");
   textSize(28);
   //textWeight("bold");
-  text("Home Remedy App", 120, 40);
+  text("The Ayurvedic Home Remedys", 50, 40);
 }
