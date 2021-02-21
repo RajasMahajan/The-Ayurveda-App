@@ -34,7 +34,7 @@ function preload() {
   coughimage = loadImage("cough.png");
   coughremedyimageimage = loadImage("coughremedyimage.jpg");
   headikeremedyimage = loadImage("headikeremedy.png");
-  headikeimage = loadImage("hedacherealimage.png");
+  headikeimage = loadImage("headacheimages.png");
   coughteaimage = loadImage("honeytea.jpg");
   coughremedyimage = loadImage("coughRemedy.png");
   coldHomeRemedyimage = loadImage("coldhomeremedy.png");
@@ -45,7 +45,7 @@ function setup() {
   // text image/sprite0
   intro1 = createSprite(250, 150, 50, 50);
   intro1.addImage(intro1image);
-  intro1.scale = 0.6;
+  intro1.scale = 0.9;
   intro1.visible = false;
   //cough remedy image
   coughRemedyimage = createSprite(250, 480, 50, 50);
@@ -84,7 +84,7 @@ function setup() {
   coughButton.scale = 0.36;
   coughButton.visible = false;
   headikeButton.addImage(headikeimage);
-  headikeButton.scale = 0.15;
+  headikeButton.scale = 0.2;
   headikeButton.visible = false;
 }
 
@@ -124,8 +124,6 @@ function draw() {
     coughButton.visible = false;
     coldButton.visible = false;
     headikeButton.visible = false;
-    //title.visible = false;
-    //   coldHomeRemedy.visible = true;
     coughremedy.visible = true;
     homescreenButton.visible = true;
     coughimagesprite.visible = true;
@@ -161,5 +159,5 @@ function draw() {
   fill("black");
   textSize(28);
   //textWeight("bold");
-  text("The Ayurvedic Home Remedys", 50, 40);
+  text("The Ayurvedic Home Remedies", 50, 40);
 }
