@@ -45,7 +45,7 @@ function setup() {
   // text image/sprite0
   intro1 = createSprite(250, 150, 50, 50);
   intro1.addImage(intro1image);
-  intro1.scale = 0.9;
+  intro1.scale = 0.6;
   intro1.visible = false;
   //cough remedy image
   coughRemedyimage = createSprite(250, 480, 50, 50);
